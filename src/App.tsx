@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -8,19 +8,20 @@ import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ResumeModal } from './components/ResumeModal';
 
 export const App: React.FC = () => {
-  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const handleOpenResume = () => {
+    window.open('/resume.pdf', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-[#080b11] text-slate-100 selection:bg-indigo-500/30 selection:text-white relative">
       {/* Navigation */}
-      <Navbar onResumeClick={() => setIsResumeModalOpen(true)} />
+      <Navbar onResumeClick={handleOpenResume} />
 
       {/* Main Sections */}
       <main>
-        <Hero onResumeClick={() => setIsResumeModalOpen(true)} />
+        <Hero onResumeClick={handleOpenResume} />
         <About />
         <Skills />
         <WhatIDo />
@@ -31,12 +32,6 @@ export const App: React.FC = () => {
 
       {/* Footer */}
       <Footer />
-
-      {/* Resume Modal */}
-      <ResumeModal
-        isOpen={isResumeModalOpen}
-        onClose={() => setIsResumeModalOpen(false)}
-      />
     </div>
   );
 };

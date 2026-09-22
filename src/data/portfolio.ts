@@ -20,7 +20,7 @@ export const portfolioData: PortfolioData = {
     handwrittenDoodleHero: 'Better\nApps\nBrighter\nIdeas',
     handwrittenDoodleContact: 'Build\nSomething\nGreat',
     profileImage: monikaProfile,
-    resumeUrl: '#resume'
+    resumeUrl: '/resume.pdf'
   },
 
   navigation: [
@@ -41,7 +41,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/monika',
+      url: 'https://www.linkedin.com/in/monika-kumari-031041236/',
       icon: 'Linkedin',
       ariaLabel: 'Monika Kumari LinkedIn profile'
     },
@@ -198,8 +198,8 @@ export const portfolioData: PortfolioData = {
         'A comprehensive institutional mobile platform serving teachers, parents, and school administrators. Features streamlined daily biometric attendance logs, real-time fee payment status dashboards, and instant class announcements.',
       image: insightseImg,
       technologies: ['Flutter', 'Dart', 'REST APIs'],
-      githubUrl: 'YOUR_GITHUB_URL',
-      liveUrl: 'PROJECT_URL',
+      isPrivate: true,
+      privateMessage: 'This is a private project by company and cannot be publicly shared.',
       highlights: [
         'Engineered responsive dashboards for daily attendance logging and PDF grade report generation',
         'Implemented secure RESTful API communication and JWT token caching',
@@ -216,8 +216,8 @@ export const portfolioData: PortfolioData = {
         'Enterprise Resource Planning (ERP) modules designed and customized on Frappe / ERPNext framework. Streamlined end-to-end booking calendars, automated sales invoice reconciliation, and Kanban project workflow trackers.',
       image: stellapolarisImg,
       technologies: ['Frappe', 'JavaScript', 'ERPNext'],
-      githubUrl: 'YOUR_GITHUB_URL',
-      liveUrl: 'PROJECT_URL',
+      isPrivate: true,
+      privateMessage: 'This is a private project by company and cannot be publicly shared.',
       highlights: [
         'Developed custom Frappe DocTypes and automated client-side JavaScript controllers',
         'Implemented dynamic Room Booking schedule calendar with real-time conflict checking',
@@ -281,9 +281,9 @@ export const portfolioData: PortfolioData = {
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/monika',
+      value: 'linkedin.com/in/monika-kumari-031041236',
       subtext: 'Connect with me',
-      href: 'https://linkedin.com/in/monika2',
+      href: 'https://www.linkedin.com/in/monika-kumari-031041236/',
       iconName: 'Linkedin',
       type: 'linkedin'
     },

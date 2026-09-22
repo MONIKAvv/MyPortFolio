@@ -39,10 +39,12 @@ export interface ProjectItem {
   longDescription?: string;
   image: string;
   technologies: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   highlights?: string[];
   featured?: boolean;
+  isPrivate?: boolean;
+  privateMessage?: string;
 }
 
 export interface ExperienceItem {
