@@ -6,9 +6,9 @@ import stellapolarisImg from '../assets/stellapolaris.jpg';
 
 export const portfolioData: PortfolioData = {
   developer: {
-    name: 'Monika Ramwin',
+    name: 'Monika Kumari',
     firstName: 'Monika',
-    lastName: 'Ramwin',
+    lastName: 'Kumari',
     role: 'Flutter / Application Developer',
     greeting: "Hi, I'm",
     bioSummary:
@@ -35,21 +35,21 @@ export const portfolioData: PortfolioData = {
   socialLinks: [
     {
       name: 'GitHub',
-      url: 'https://github.com/monika',
+      url: 'https://github.com/MONIKAvv/',
       icon: 'Github',
-      ariaLabel: 'Monika Ramwin GitHub profile'
+      ariaLabel: 'Monika Kumari GitHub profile'
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/monika',
       icon: 'Linkedin',
-      ariaLabel: 'Monika Ramwin LinkedIn profile'
+      ariaLabel: 'Monika Kumari LinkedIn profile'
     },
     {
       name: 'Email',
-      url: 'mailto:monika.ramwin.testing@gmail.com',
+      url: 'mailto:monikasoftwaredev@gmail.com',
       icon: 'Mail',
-      ariaLabel: 'Send email to Monika Ramwin'
+      ariaLabel: 'Send email to Monika'
     }
   ],
 
@@ -61,7 +61,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       label: 'Email',
-      value: 'monika.ramwin.testing@gmail.com',
+      value: 'monikasoftwaredev@gmail.com',
       iconName: 'Mail'
     },
     {
@@ -71,7 +71,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       label: 'Languages',
-      value: 'English, Hindi, Telugu',
+      value: 'English, Hindi',
       iconName: 'Languages'
     }
   ],
@@ -180,8 +180,8 @@ export const portfolioData: PortfolioData = {
         'BrainVault brings intelligent contextual note-taking, AI document summaries, semantic search, and multi-device cloud synchronization into a smooth, native Flutter experience powered by Google Gemini AI and Firebase cloud backend.',
       image: brainvaultImg,
       technologies: ['Flutter', 'Firebase', 'Gemini', 'Dart'],
-      githubUrl: 'YOUR_GITHUB_URL',
-      liveUrl: 'PROJECT_URL',
+      githubUrl: 'https://github.com/MONIKAvv/BrainVault',
+      liveUrl: 'https://github.com/MONIKAvv/BrainVault',
       highlights: [
         'Integrated Google Gemini LLM API for automated document summaries and insights',
         'Built reactive state management with Riverpod and offline-first Firestore sync',
@@ -240,7 +240,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'exp-2',
-      period: '2023 – 2024',
+      period: '2026',
       role: 'Application Developer',
       companyOrContext: 'Insightse (School App)',
       description:
@@ -250,11 +250,21 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'exp-3',
-      period: '2023',
+      period: '2026',
       role: 'Software Developer',
       companyOrContext: 'Stella Polaris (ERPNext)',
       description:
         'Contributed to Project Manager, Sales Invoice and Room Book modules.',
+      badge: 'Project',
+      isCurrent: false
+    },
+    {
+      id: 'exp-4',
+      period: '2025',
+      role: 'Software Developer Intern',
+      companyOrContext: 'FunMate',
+      description:
+        'Contributed to create a platform reward based application, where people can get reward while learning',
       badge: 'Project',
       isCurrent: false
     }
@@ -263,9 +273,9 @@ export const portfolioData: PortfolioData = {
   contactInfo: [
     {
       label: 'Email',
-      value: 'monika.ramwin.testing@gmail.com',
+      value: 'monikasoftwaredev@gmail.com',
       subtext: 'Send me an email',
-      href: 'mailto:monika.ramwin.testing@gmail.com',
+      href: 'mailto:monikasoftwaredev@gmail.com',
       iconName: 'Mail',
       type: 'email'
     },
@@ -273,15 +283,15 @@ export const portfolioData: PortfolioData = {
       label: 'LinkedIn',
       value: 'linkedin.com/in/monika',
       subtext: 'Connect with me',
-      href: 'https://linkedin.com/in/monika',
+      href: 'https://linkedin.com/in/monika2',
       iconName: 'Linkedin',
       type: 'linkedin'
     },
     {
       label: 'GitHub',
-      value: 'github.com/monika',
+      value: 'github.com/MONIKAvv',
       subtext: 'Check my work',
-      href: 'https://github.com/monika',
+      href: 'https://github.com/MONIKAvv',
       iconName: 'Github',
       type: 'github'
     },
