@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, ArrowRight, Send, X } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, Send, X, Check, Copy } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { portfolioData } from '../data/portfolio';
 
 export const Contact: React.FC = () => {
   const { contactInfo, developer } = portfolioData;
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [isOpenSuccess, setIsOpenSuccess] = useState(false);
 
   const getContactIcon = (iconName: string) => {
     switch (iconName) {
@@ -21,6 +24,30 @@ export const Contact: React.FC = () => {
       default:
         return <Mail className="w-5 h-5 text-indigo-400" />;
     }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('monikasoftwaredev@gmail.com');
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const handleDirectEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${formState.name || 'Visitor'}`);
+    const body = encodeURIComponent(
+      `Hello Monika,\n\nName: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}\n\n---\nSent from Monika's Portfolio Website`
+    );
+
+    const mailtoUrl = `mailto:monikasoftwaredev@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+
+    setIsOpenSuccess(true);
+    setTimeout(() => {
+      setIsOpenSuccess(false);
+      setIsFormModalOpen(false);
+      setFormState({ name: '', email: '', message: '' });
+    }, 3000);
   };
 
   return (
@@ -52,7 +79,7 @@ export const Contact: React.FC = () => {
                 I'm always open to new opportunities, collaborations and exciting projects. Feel free to reach out!
               </p>
 
-              <div className="pt-4">
+              <div className="pt-4 flex flex-wrap items-center gap-4">
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
@@ -62,6 +89,14 @@ export const Contact: React.FC = () => {
                   <span>Get in Touch</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
+
+                <a
+                  href="mailto:monikasoftwaredev@gmail.com?subject=Portfolio%20Inquiry"
+                  className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white font-medium text-sm sm:text-base border border-white/10 transition-all"
+                >
+                  <Mail className="w-4 h-4 text-indigo-400" />
+                  <span>Email Directly</span>
+                </a>
               </div>
             </div>
 
@@ -173,80 +208,83 @@ export const Contact: React.FC = () => {
               </button>
 
               <h3 className="text-2xl font-bold text-white mb-1">Send a Message</h3>
-              <p className="text-xs text-indigo-300 mb-6">
-                Direct to <span className="font-semibold text-white">monikasoftwaredev@gmail.com</span>
+              <p className="text-xs text-slate-400 mb-6 flex items-center justify-between">
+                <span>To: <span className="font-semibold text-indigo-300">monikasoftwaredev@gmail.com</span></span>
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  className="text-xs text-indigo-400 hover:text-indigo-300 underline underline-offset-2 flex items-center gap-1 cursor-pointer"
+                >
+                  {copiedEmail ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                  <span>{copiedEmail ? 'Copied!' : 'Copy'}</span>
+                </button>
               </p>
 
-              <form
-                action="https://formsubmit.co/monikasoftwaredev@gmail.com"
-                method="POST"
-                className="space-y-4"
-              >
-                {/* FormSubmit Configuration Fields */}
-                <input type="hidden" name="_subject" value="New Portfolio Message from Monika's Website" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="e.g. Alex Smith"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="alex@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    required
-                    placeholder="Tell me about your project or opportunity..."
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm resize-none"
-                  />
-                </div>
-
-                <div className="pt-2 space-y-3">
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
-                  >
-                    <span>Submit Message</span>
-                    <Send className="w-4 h-4" />
-                  </button>
-
-                  <div className="flex items-center justify-center gap-2 text-xs text-slate-400 pt-1">
-                    <span>Or send directly via</span>
-                    <a
-                      href="mailto:monikasoftwaredev@gmail.com?subject=Portfolio%20Inquiry"
-                      className="text-indigo-300 hover:text-white font-semibold underline underline-offset-2 flex items-center gap-1"
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>Gmail / Email App</span>
-                    </a>
+              {isOpenSuccess ? (
+                <div className="py-10 flex flex-col items-center justify-center text-center space-y-3">
+                  <div className="w-14 h-14 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                    <Check className="w-7 h-7" />
                   </div>
+                  <h4 className="text-lg font-bold text-white">Opening Email Client...</h4>
+                  <p className="text-xs text-slate-400 max-w-sm">
+                    Your message has been pre-filled. Simply hit Send in your email application to deliver it to Monika!
+                  </p>
                 </div>
-              </form>
+              ) : (
+                <form onSubmit={handleDirectEmailSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Alex Smith"
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Your Email Address
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="alex@example.com"
+                      value={formState.email}
+                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Message
+                    </label>
+                    <textarea
+                      rows={4}
+                      required
+                      placeholder="Tell me about your project or opportunity..."
+                      value={formState.message}
+                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm resize-none"
+                    />
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
+                    >
+                      <span>Send via Email App</span>
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </div>
+                </form>
+              )}
             </motion.div>
           </div>
         )}
@@ -254,3 +292,4 @@ export const Contact: React.FC = () => {
     </section>
   );
 };
+
