@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] pt-32 pb-20 flex items-center justify-center overflow-hidden"
+      className="relative min-h-[70vh] pt-10 pb-10 flex items-center justify-center overflow-hidden"
     >
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Text & CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -152,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
 
             {/* Main Portrait Card Container */}
             <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[4/5] rounded-3xl p-2.5 bg-gradient-to-b from-indigo-500/20 via-purple-500/10 to-transparent border border-indigo-500/30 backdrop-blur-xl shadow-2xl shadow-indigo-950/60 overflow-visible group">
-              
+
               {/* Inner Frame */}
               <div className="w-full h-full rounded-[1.25rem] overflow-hidden relative bg-[#0d1222]">
                 <img
@@ -160,7 +160,7 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
                   alt={developer.name}
                   className="w-full h-full object-cover object-top filter brightness-105 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Subtle Gradient Overlay at the base for seamless blending */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080b11] via-transparent to-transparent opacity-60" />
               </div>
