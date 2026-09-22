@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, ArrowRight, Send, CheckCircle2, X, Loader2 } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, Send, X } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { portfolioData } from '../data/portfolio';
 
 export const Contact: React.FC = () => {
   const { contactInfo, developer } = portfolioData;
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
 
   const getContactIcon = (iconName: string) => {
     switch (iconName) {
@@ -24,44 +20,6 @@ export const Contact: React.FC = () => {
         return <MapPin className="w-5 h-5 text-rose-400" />;
       default:
         return <Mail className="w-5 h-5 text-indigo-400" />;
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setErrorMessage('');
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/monikasoftwaredev@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-          _subject: `New Portfolio Message from ${formState.name}`,
-          _template: 'table',
-        }),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setIsFormModalOpen(false);
-          setFormState({ name: '', email: '', message: '' });
-        }, 3000);
-      } else {
-        setErrorMessage('Failed to send message. Please try again or email directly.');
-      }
-    } catch {
-      setErrorMessage('Network error. Please try emailing directly to monikasoftwaredev@gmail.com');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -216,90 +174,79 @@ export const Contact: React.FC = () => {
 
               <h3 className="text-2xl font-bold text-white mb-1">Send a Message</h3>
               <p className="text-xs text-indigo-300 mb-6">
-                Delivers directly to <span className="font-semibold text-white">monikasoftwaredev@gmail.com</span>
+                Direct to <span className="font-semibold text-white">monikasoftwaredev@gmail.com</span>
               </p>
 
-              {isSubmitted ? (
-                <div className="py-12 flex flex-col items-center justify-center text-center space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white">Message Sent Successfully!</h4>
-                  <p className="text-sm text-slate-400 max-w-sm">
-                    Thank you! Your message has been sent directly to Monika's inbox.
-                  </p>
+              <form
+                action="https://formsubmit.co/monikasoftwaredev@gmail.com"
+                method="POST"
+                className="space-y-4"
+              >
+                {/* FormSubmit Configuration Fields */}
+                <input type="hidden" name="_subject" value="New Portfolio Message from Monika's Website" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="e.g. Alex Smith"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {errorMessage && (
-                    <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">
-                      {errorMessage}
-                    </div>
-                  )}
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Alex Smith"
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="alex@example.com"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
+                  />
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="alex@example.com"
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    required
+                    placeholder="Tell me about your project or opportunity..."
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm resize-none"
+                  />
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      placeholder="Tell me about your project or inquiry..."
-                      value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm resize-none"
-                    />
-                  </div>
+                <div className="pt-2 space-y-3">
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
+                  >
+                    <span>Submit Message</span>
+                    <Send className="w-4 h-4" />
+                  </button>
 
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  <div className="flex items-center justify-center gap-2 text-xs text-slate-400 pt-1">
+                    <span>Or send directly via</span>
+                    <a
+                      href="mailto:monikasoftwaredev@gmail.com?subject=Portfolio%20Inquiry"
+                      className="text-indigo-300 hover:text-white font-semibold underline underline-offset-2 flex items-center gap-1"
                     >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Sending message...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Send Message</span>
-                          <Send className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Gmail / Email App</span>
+                    </a>
                   </div>
-                </form>
-              )}
+                </div>
+              </form>
             </motion.div>
           </div>
         )}
