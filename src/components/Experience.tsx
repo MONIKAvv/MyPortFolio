@@ -7,7 +7,7 @@ export const Experience: React.FC = () => {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-[#080b11]">
+    <section id="experience" className="py-12 relative overflow-hidden bg-[#080b11]">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
@@ -19,7 +19,7 @@ export const Experience: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="text-left mb-16"
+          className="text-left mb-10"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Experienc<span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">e</span>

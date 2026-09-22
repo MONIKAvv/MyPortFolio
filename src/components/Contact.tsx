@@ -36,7 +36,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-[#080b11]">
+    <section id="contact" className="py-12 relative overflow-hidden bg-[#080b11]">
       {/* Background Ambient Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-indigo-600/15 rounded-full blur-[160px] pointer-events-none -z-10" />
 
@@ -48,7 +48,7 @@ export const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-[#121832] via-[#10172e] to-[#1c1335] border border-indigo-500/30 overflow-hidden shadow-2xl shadow-indigo-950/60 mb-16"
+          className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-[#121832] via-[#10172e] to-[#1c1335] border border-indigo-500/30 overflow-hidden shadow-2xl shadow-indigo-950/60 mb-10"
         >
           {/* Decorative Corner Glow */}
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />

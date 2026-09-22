@@ -42,7 +42,7 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#080b11]/70">
+    <section id="skills" className="py-12 relative overflow-hidden bg-[#080b11]/70">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
 
@@ -54,7 +54,7 @@ export const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="text-left mb-14"
+          className="text-left mb-8"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Skil<span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">ls</span>

@@ -22,7 +22,7 @@ export const WhatIDo: React.FC = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 relative overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
@@ -34,7 +34,7 @@ export const WhatIDo: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="text-left mb-12"
+          className="text-left mb-8"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             What I{' '}
