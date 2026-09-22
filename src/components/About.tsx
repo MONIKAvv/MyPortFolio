@@ -30,7 +30,7 @@ export const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="pt-6 pb-14 relative overflow-hidden">
+    <section id="about" className="pt-8 pb-14 relative overflow-hidden">
       {/* Subtle Glow Background */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
-          className="mb-8"
+          className="mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             About{' '}

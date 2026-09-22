@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#06090e] border-t border-white/[0.08] py-8 overflow-hidden">
+    <footer className="relative bg-[#06090e] border-t border-white/[0.08] py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}

@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onResumeClick }) => {
   return (
     <section
       id="home"
-      className="relative min-h-0 pt-28 pb-8 flex items-center justify-center overflow-hidden"
+      className="relative min-h-0 pt-32 pb-8 flex items-center justify-center overflow-hidden"
     >
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
