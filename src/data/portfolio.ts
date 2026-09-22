@@ -35,7 +35,7 @@ export const portfolioData: PortfolioData = {
   socialLinks: [
     {
       name: 'GitHub',
-      url: 'https://github.com/MONIKAvv/',
+      url: 'https://github.com/MONIKAvv?tab=overview&from=2026-08-01&to=2026-08-31',
       icon: 'Github',
       ariaLabel: 'Monika Kumari GitHub profile'
     },
@@ -291,7 +291,7 @@ export const portfolioData: PortfolioData = {
       label: 'GitHub',
       value: 'github.com/MONIKAvv',
       subtext: 'Check my work',
-      href: 'https://github.com/MONIKAvv',
+      href: 'https://github.com/MONIKAvv?tab=overview&from=2026-08-01&to=2026-08-31',
       iconName: 'Github',
       type: 'github'
     },

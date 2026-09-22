@@ -46,7 +46,7 @@ export const Projects: React.FC = () => {
           </motion.div>
 
           <motion.a
-            href="https://github.com/MONIKAvv"
+            href="https://github.com/MONIKAvv?tab=overview&from=2026-08-01&to=2026-08-31"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, x: 20 }}

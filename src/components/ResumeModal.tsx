@@ -23,9 +23,9 @@ Bio:
 ${developer.bioSummary}
 
 Location: India
-Email: monika.ramwin.testing@gmail.com
-LinkedIn: https://linkedin.com/in/monika
-GitHub: https://github.com/monika
+Email: monikasoftwaredev@gmail.com
+LinkedIn: https://www.linkedin.com/in/monika-kumari-031041236/
+GitHub: https://github.com/MONIKAvv?tab=overview&from=2026-08-01&to=2026-08-31
 
 ----------------------------------------
 CORE SKILLS & TECHNOLOGIES
