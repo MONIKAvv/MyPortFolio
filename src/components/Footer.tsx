@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Code2, Mail, ArrowUp } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { portfolioData } from '../data/portfolio';
@@ -15,24 +14,24 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#0d0d0f] border-t border-[#A9A3A6]/20 py-12 overflow-hidden">
+    <footer className="bg-[#eaedf0] border-t border-gray-300 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#A9A3A6]/15">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-gray-300">
           
           {/* Logo Brand */}
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#19191c] border border-[#A9A3A6]/30 flex items-center justify-center text-[#F4F1E9]">
-              <Code2 className="w-4 h-4 text-[#F4F1E9]" />
+            <div className="w-8 h-8 rounded-lg bg-white border border-gray-300 flex items-center justify-center text-gray-900">
+              <Code2 className="w-4 h-4 text-gray-900" />
             </div>
-            <span className="text-lg font-bold text-[#F4F1E9] tracking-tight">
+            <span className="text-lg font-bold text-gray-900 tracking-tight">
               {developer.firstName}
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="text-xs sm:text-sm text-[#A9A3A6] font-medium text-center">
+          <p className="text-xs sm:text-sm text-gray-600 font-medium text-center">
             {footer.tagline}
           </p>
 
@@ -53,7 +52,7 @@ export const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.ariaLabel}
-                    className="w-8 h-8 rounded-full bg-[#19191c] border border-[#A9A3A6]/25 flex items-center justify-center text-[#A9A3A6] hover:text-[#F4F1E9] hover:border-[#F4F1E9]/50 hover:bg-[#222226] transition-all"
+                    className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors"
                   >
                     {getIcon()}
                   </a>
@@ -61,24 +60,22 @@ export const Footer: React.FC = () => {
               })}
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            <button
               onClick={scrollToTop}
               title="Back to Top"
-              className="w-8 h-8 rounded-full bg-[#19191c] border border-[#A9A3A6]/35 flex items-center justify-center text-[#F4F1E9] hover:bg-[#F4F1E9] hover:text-[#111113] hover:border-[#F4F1E9] transition-all cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors cursor-pointer"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />
-            </motion.button>
+            </button>
           </div>
 
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A9A3A6]/70 gap-2">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-2">
           <p>{footer.copyrightText}</p>
-          <p className="text-[#A9A3A6]/50">Built with React, TypeScript & Tailwind CSS</p>
+          <p className="text-gray-500">Built with React, TypeScript & Tailwind CSS</p>
         </div>
 
       </div>

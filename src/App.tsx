@@ -15,7 +15,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#111113] text-[#F4F1E9] selection:bg-[#A9A3A6]/40 selection:text-[#F4F1E9] relative">
+    <div className="min-h-screen bg-[#f4f5f7] text-[#1f2937] selection:bg-gray-300 selection:text-gray-900 relative">
       {/* Navigation */}
       <Navbar onResumeClick={handleOpenResume} />
 

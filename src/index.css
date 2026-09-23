@@ -5,33 +5,27 @@
     --font-primary: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
     --font-handwritten: 'Caveat', cursive;
 
-    /* Exclusive Palette: #A9A3A6 & #F4F1E9 */
-    --color-pewter: #A9A3A6;
-    --color-cream: #F4F1E9;
-
-    /* Monochromatic Dark Scale */
-    --bg-main: #111113;
-    --bg-surface: #19191c;
-    --bg-surface-elevated: #222226;
-    --border-pewter: rgba(169, 163, 166, 0.2);
-    --border-cream: rgba(244, 241, 233, 0.25);
+    --bg-main: #f4f5f7;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
   }
 
   html {
     font-family: var(--font-primary);
-    background-color: #111113;
-    color: #F4F1E9;
+    background-color: #f4f5f7;
+    color: #1f2937;
   }
 
   body {
     overflow-x: hidden;
-    background-color: #111113;
-    color: #F4F1E9;
+    background-color: #f4f5f7;
+    color: #1f2937;
   }
 
   ::selection {
-    background-color: rgba(169, 163, 166, 0.35);
-    color: #F4F1E9;
+    background-color: #e5e7eb;
+    color: #111827;
   }
 }
 
@@ -40,37 +34,15 @@
   font-family: var(--font-handwritten);
 }
 
-/* Glassmorphism Styles */
+/* Clean Flat Panels (No Shadows, No Blur) */
 .glass-panel {
-  background: rgba(25, 25, 28, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(169, 163, 166, 0.18);
-}
-
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(34, 34, 38, 0.85);
-  border-color: rgba(244, 241, 233, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(169, 163, 166, 0.25);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
 }
 
 .glass-pill {
-  background: rgba(244, 241, 233, 0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(169, 163, 166, 0.25);
-}
-
-/* Ambient Glow Gradients using #A9A3A6 and #F4F1E9 */
-.glow-gradient-pewter {
-  background: radial-gradient(circle at center, rgba(169, 163, 166, 0.18) 0%, rgba(169, 163, 166, 0) 70%);
-}
-
-.glow-gradient-cream {
-  background: radial-gradient(circle at center, rgba(244, 241, 233, 0.12) 0%, rgba(244, 241, 233, 0) 70%);
+  background: #ffffff;
+  border: 1px solid #d1d5db;
 }
 
 /* Custom Scrollbar */
@@ -79,44 +51,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #111113;
+  background: #f4f5f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A9A3A6;
+  background: #cbd5e1;
   border-radius: 9999px;
-  border: 2px solid #111113;
+  border: 2px solid #f4f5f7;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F4F1E9;
-}
-
-/* Subtle Shimmer Animation */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.04);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 6s ease-in-out infinite;
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(1deg);
-  }
-}
-
-.animate-float-slow {
-  animation: floatSlow 5s ease-in-out infinite;
+  background: #94a3b8;
 }
