@@ -17,22 +17,22 @@ export const About: React.FC = () => {
   const getInfoIcon = (iconName: string) => {
     switch (iconName) {
       case 'MapPin':
-        return <MapPin className="w-5 h-5 text-indigo-400" />;
+        return <MapPin className="w-5 h-5 text-[#F4F1E9]" />;
       case 'Mail':
-        return <Mail className="w-5 h-5 text-blue-400" />;
+        return <Mail className="w-5 h-5 text-[#A9A3A6]" />;
       case 'Briefcase':
-        return <Briefcase className="w-5 h-5 text-purple-400" />;
+        return <Briefcase className="w-5 h-5 text-[#F4F1E9]" />;
       case 'Languages':
-        return <Languages className="w-5 h-5 text-pink-400" />;
+        return <Languages className="w-5 h-5 text-[#A9A3A6]" />;
       default:
-        return <Sparkles className="w-5 h-5 text-indigo-400" />;
+        return <Sparkles className="w-5 h-5 text-[#F4F1E9]" />;
     }
   };
 
   return (
     <section id="about" className="pt-8 pb-14 relative overflow-hidden">
       {/* Subtle Glow Background */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#A9A3A6]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -44,13 +44,13 @@ export const About: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F4F1E9] tracking-tight">
             About{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F4F1E9] via-[#A9A3A6] to-[#F4F1E9] bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mt-3" />
+          <div className="w-12 h-1 bg-gradient-to-r from-[#A9A3A6] to-[#F4F1E9] rounded-full mt-3" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -61,7 +61,7 @@ export const About: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 flex flex-col space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed"
+            className="lg:col-span-7 flex flex-col space-y-6 text-[#A9A3A6] text-base sm:text-lg leading-relaxed"
           >
             {developer.aboutParagraphs.map((paragraph, index) => (
               <p key={index} className="text-slate-300">
@@ -74,10 +74,10 @@ export const About: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setIsBioModalOpen(true)}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#12182b] hover:bg-[#1a233d] border border-indigo-500/30 text-indigo-300 hover:text-white hover:border-indigo-400 font-medium text-sm sm:text-base transition-all duration-200 group cursor-pointer shadow-md shadow-indigo-950/40"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#19191c] hover:bg-[#222226] border border-[#A9A3A6]/35 text-[#F4F1E9] hover:border-[#F4F1E9] font-medium text-sm sm:text-base transition-all duration-200 group cursor-pointer shadow-md shadow-black/50"
               >
                 <span>More About Me</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#F4F1E9]" />
               </motion.button>
             </div>
           </motion.div>
@@ -99,17 +99,17 @@ export const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ y: -2, borderColor: 'rgba(99, 102, 241, 0.4)' }}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#0f1527]/80 border border-white/[0.07] backdrop-blur-md transition-all group"
+                  whileHover={{ y: -2, borderColor: 'rgba(244, 241, 233, 0.4)' }}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#19191c]/85 border border-[#A9A3A6]/20 backdrop-blur-md transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-indigo-950/30 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-[#222226] border border-[#A9A3A6]/25 flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-[#2b2b30] transition-all">
                     {getInfoIcon(info.iconName)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#A9A3A6]">
                       {info.label}
                     </p>
-                    <p className="text-sm sm:text-base font-medium text-slate-200 truncate group-hover:text-white transition-colors">
+                    <p className="text-sm sm:text-base font-medium text-[#F4F1E9] truncate group-hover:text-white transition-colors">
                       {info.value}
                     </p>
                   </div>
@@ -117,12 +117,12 @@ export const About: React.FC = () => {
                     <button
                       onClick={() => handleCopyEmail(info.value)}
                       title="Copy email to clipboard"
-                      className="px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/20 transition-all flex items-center gap-1.5"
+                      className="px-3 py-1.5 text-xs font-medium rounded-lg bg-[#A9A3A6]/15 hover:bg-[#A9A3A6]/30 text-[#F4F1E9] border border-[#A9A3A6]/30 transition-all flex items-center gap-1.5 cursor-pointer"
                     >
                       {copiedEmail ? (
                         <>
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="text-emerald-400 font-semibold">Copied!</span>
+                          <Check className="w-3.5 h-3.5 text-[#F4F1E9]" />
+                          <span className="text-[#F4F1E9] font-semibold">Copied!</span>
                         </>
                       ) : (
                         <span>Copy</span>
@@ -140,68 +140,68 @@ export const About: React.FC = () => {
       {/* More About Me Modal */}
       <AnimatePresence>
         {isBioModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-2xl bg-[#0c1122] border border-indigo-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-indigo-950/80 max-h-[85vh] overflow-y-auto"
+              className="relative w-full max-w-2xl bg-[#161619] border border-[#A9A3A6]/35 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/90 max-h-[85vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setIsBioModalOpen(false)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A9A3A6] hover:text-[#F4F1E9] transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                <div className="w-10 h-10 rounded-xl bg-[#222226] border border-[#A9A3A6]/30 flex items-center justify-center text-[#F4F1E9]">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">More About Monika</h3>
-                  <p className="text-xs text-indigo-300">Engineering Philosophy & Background</p>
+                  <h3 className="text-2xl font-bold text-[#F4F1E9]">More About Monika</h3>
+                  <p className="text-xs text-[#A9A3A6]">Engineering Philosophy & Background</p>
                 </div>
               </div>
 
               <div className="space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
                 <div>
-                  <h4 className="flex items-center gap-2 text-white font-semibold text-base mb-2">
-                    <GraduationCap className="w-4 h-4 text-blue-400" />
+                  <h4 className="flex items-center gap-2 text-[#F4F1E9] font-semibold text-base mb-2">
+                    <GraduationCap className="w-4 h-4 text-[#A9A3A6]" />
                     Background & Foundation
                   </h4>
-                  <p className="text-slate-400">
+                  <p className="text-[#A9A3A6]">
                     Graduated with a strong technical foundation in computer science and mobile application development. Specialized in cross-platform mobile engineering with Dart & Flutter, complemented with native Android Kotlin concepts.
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="flex items-center gap-2 text-white font-semibold text-base mb-2">
-                    <Award className="w-4 h-4 text-purple-400" />
+                  <h4 className="flex items-center gap-2 text-[#F4F1E9] font-semibold text-base mb-2">
+                    <Award className="w-4 h-4 text-[#F4F1E9]" />
                     Development Principles
                   </h4>
-                  <p className="text-slate-400">
+                  <p className="text-[#A9A3A6]">
                     I believe great software balances clean, maintainable architecture with delightful, intuitive UI micro-interactions. From state management patterns like Riverpod/Bloc to offline-first cache strategies, I craft robust mobile solutions.
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="flex items-center gap-2 text-white font-semibold text-base mb-2">
-                    <HeartHandshake className="w-4 h-4 text-emerald-400" />
+                  <h4 className="flex items-center gap-2 text-[#F4F1E9] font-semibold text-base mb-2">
+                    <HeartHandshake className="w-4 h-4 text-[#A9A3A6]" />
                     Collaboration & Growth
                   </h4>
-                  <p className="text-slate-400">
+                  <p className="text-[#A9A3A6]">
                     Always excited to collaborate with cross-functional teams, contribute to open-source, and explore emerging AI capabilities (Gemini, LangChain) to create next-generation applications.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/10 flex justify-end">
+              <div className="mt-8 pt-6 border-t border-[#A9A3A6]/20 flex justify-end">
                 <button
                   onClick={() => setIsBioModalOpen(false)}
-                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm shadow-md hover:brightness-110 transition-all cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#A9A3A6] to-[#F4F1E9] text-[#111113] font-semibold text-sm shadow-md hover:brightness-110 transition-all cursor-pointer"
                 >
                   Close
                 </button>

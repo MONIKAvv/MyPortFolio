@@ -15,24 +15,24 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#06090e] border-t border-white/[0.08] py-12 overflow-hidden">
+    <footer className="relative bg-[#0d0d0f] border-t border-[#A9A3A6]/20 py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/[0.06]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#A9A3A6]/15">
           
           {/* Logo Brand */}
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600/30 to-purple-600/30 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-              <Code2 className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg bg-[#19191c] border border-[#A9A3A6]/30 flex items-center justify-center text-[#F4F1E9]">
+              <Code2 className="w-4 h-4 text-[#F4F1E9]" />
             </div>
-            <span className="text-lg font-bold text-white tracking-tight">
+            <span className="text-lg font-bold text-[#F4F1E9] tracking-tight">
               {developer.firstName}
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="text-xs sm:text-sm text-slate-400 font-medium text-center">
+          <p className="text-xs sm:text-sm text-[#A9A3A6] font-medium text-center">
             {footer.tagline}
           </p>
 
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.ariaLabel}
-                    className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/40 hover:bg-indigo-950/30 transition-all"
+                    className="w-8 h-8 rounded-full bg-[#19191c] border border-[#A9A3A6]/25 flex items-center justify-center text-[#A9A3A6] hover:text-[#F4F1E9] hover:border-[#F4F1E9]/50 hover:bg-[#222226] transition-all"
                   >
                     {getIcon()}
                   </a>
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
               title="Back to Top"
-              className="w-8 h-8 rounded-full bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 hover:text-white hover:bg-indigo-600 transition-all cursor-pointer"
+              className="w-8 h-8 rounded-full bg-[#19191c] border border-[#A9A3A6]/35 flex items-center justify-center text-[#F4F1E9] hover:bg-[#F4F1E9] hover:text-[#111113] hover:border-[#F4F1E9] transition-all cursor-pointer"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />
@@ -76,9 +76,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A9A3A6]/70 gap-2">
           <p>{footer.copyrightText}</p>
-          <p className="text-slate-600">Built with React, TypeScript & Tailwind CSS</p>
+          <p className="text-[#A9A3A6]/50">Built with React, TypeScript & Tailwind CSS</p>
         </div>
 
       </div>

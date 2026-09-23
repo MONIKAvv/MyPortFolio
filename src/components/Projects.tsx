@@ -21,10 +21,10 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-14 relative overflow-hidden bg-[#080b11]">
+    <section id="projects" className="py-14 relative overflow-hidden bg-[#111113]">
       {/* Ambient background glows */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#A9A3A6]/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#F4F1E9]/8 rounded-full blur-[130px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -36,13 +36,13 @@ export const Projects: React.FC = () => {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Project<span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">s</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F4F1E9] tracking-tight">
+              Project<span className="bg-gradient-to-r from-[#F4F1E9] via-[#A9A3A6] to-[#F4F1E9] bg-clip-text text-transparent">s</span>
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base mt-2">
+            <p className="text-[#A9A3A6] text-sm sm:text-base mt-2">
               Some of the projects I've worked on
             </p>
-            <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mt-3" />
+            <div className="w-12 h-1 bg-gradient-to-r from-[#A9A3A6] to-[#F4F1E9] rounded-full mt-3" />
           </motion.div>
 
           <motion.a
@@ -53,7 +53,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#F4F1E9] hover:text-[#A9A3A6] transition-colors group cursor-pointer"
           >
             <span>View All Projects</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -70,22 +70,22 @@ export const Projects: React.FC = () => {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
               whileHover={{ y: -8 }}
-              className="rounded-3xl bg-[#0e1426]/90 border border-white/[0.08] hover:border-indigo-500/40 overflow-hidden shadow-xl shadow-black/40 hover:shadow-indigo-950/40 transition-all duration-300 flex flex-col group cursor-pointer"
+              className="rounded-3xl bg-[#19191c]/90 border border-[#A9A3A6]/20 hover:border-[#F4F1E9]/50 overflow-hidden shadow-xl shadow-black/60 hover:shadow-black/90 transition-all duration-300 flex flex-col group cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
               {/* Project Image Frame */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-950 p-2 sm:p-3">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#111113] p-2 sm:p-3">
                 <div className="w-full h-full rounded-2xl overflow-hidden relative">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e1426] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#19191c] via-transparent to-transparent opacity-60" />
                   
                   {project.isPrivate && (
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-amber-500/30 text-amber-300 text-xs font-medium flex items-center gap-1.5">
-                      <Lock className="w-3 h-3 text-amber-400" />
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#A9A3A6]/35 text-[#F4F1E9] text-xs font-medium flex items-center gap-1.5">
+                      <Lock className="w-3 h-3 text-[#A9A3A6]" />
                       <span>Company Project</span>
                     </div>
                   )}
@@ -97,16 +97,16 @@ export const Projects: React.FC = () => {
                 <div>
                   {/* Title & Arrow */}
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                    <h3 className="text-xl font-bold text-[#F4F1E9] group-hover:text-white transition-colors">
                       {project.title}
                     </h3>
-                    <div className="w-8 h-8 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                    <div className="w-8 h-8 rounded-full bg-[#222226] border border-[#A9A3A6]/25 flex items-center justify-center text-[#F4F1E9] group-hover:bg-[#F4F1E9] group-hover:text-[#111113] group-hover:border-[#F4F1E9] transition-all duration-300">
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-6">
+                  <p className="text-sm text-[#A9A3A6] leading-relaxed line-clamp-3 mb-6">
                     {project.shortDescription}
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export const Projects: React.FC = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-[#162038] text-indigo-300 border border-indigo-500/20"
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-[#222226] text-[#F4F1E9] border border-[#A9A3A6]/25"
                       >
                         {tech}
                       </span>
@@ -125,7 +125,7 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {/* Action Links */}
-                  <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+                  <div className="flex items-center justify-between pt-4 border-t border-[#A9A3A6]/20">
                     {project.isPrivate ? (
                       <button
                         type="button"
@@ -133,9 +133,9 @@ export const Projects: React.FC = () => {
                           e.stopPropagation();
                           showPrivateToast(project.privateMessage);
                         }}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-amber-400/90 hover:text-amber-300 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#A9A3A6] hover:text-[#F4F1E9] transition-colors"
                       >
-                        <Lock className="w-3.5 h-3.5 text-amber-400" />
+                        <Lock className="w-3.5 h-3.5 text-[#A9A3A6]" />
                         <span>Private Project</span>
                       </button>
                     ) : (
@@ -144,7 +144,7 @@ export const Projects: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-[#A9A3A6] hover:text-[#F4F1E9] transition-colors"
                       >
                         <GithubIcon className="w-4 h-4" />
                         <span>GitHub</span>
@@ -158,7 +158,7 @@ export const Projects: React.FC = () => {
                           e.stopPropagation();
                           setSelectedProject(project);
                         }}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#F4F1E9] hover:text-[#A9A3A6] transition-colors cursor-pointer"
                       >
                         <span>View Details</span>
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -169,7 +169,7 @@ export const Projects: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#F4F1E9] hover:text-[#A9A3A6] transition-colors cursor-pointer"
                       >
                         <span>Live Demo</span>
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -199,17 +199,17 @@ export const Projects: React.FC = () => {
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-[#11182c]/95 border border-amber-500/40 text-amber-200 shadow-2xl shadow-black/80 backdrop-blur-md max-w-md w-[90%]"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-[#19191c]/95 border border-[#A9A3A6]/40 text-[#F4F1E9] shadow-2xl shadow-black/80 backdrop-blur-md max-w-md w-[90%]"
           >
-            <div className="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0 text-amber-400">
+            <div className="w-8 h-8 rounded-xl bg-[#222226] border border-[#A9A3A6]/30 flex items-center justify-center flex-shrink-0 text-[#F4F1E9]">
               <Info className="w-4 h-4" />
             </div>
-            <p className="text-xs sm:text-sm font-medium leading-tight flex-1">
+            <p className="text-xs sm:text-sm font-medium leading-tight flex-1 text-slate-200">
               {toastMessage}
             </p>
             <button
               onClick={() => setToastMessage(null)}
-              className="text-slate-400 hover:text-white transition-colors p-1"
+              className="text-[#A9A3A6] hover:text-white transition-colors p-1"
               aria-label="Dismiss toast"
             >
               <X className="w-4 h-4" />
@@ -220,4 +220,3 @@ export const Projects: React.FC = () => {
     </section>
   );
 };
-
