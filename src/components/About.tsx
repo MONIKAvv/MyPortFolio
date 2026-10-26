@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Briefcase, Languages, ArrowRight, Check, X, Sparkles, Award, GraduationCap, HeartHandshake } from 'lucide-react';
+import { MapPin, Mail, Briefcase, Languages, ArrowRight, Check, X, Sparkles, GraduationCap, Terminal } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
 export const About: React.FC = () => {
@@ -16,84 +16,102 @@ export const About: React.FC = () => {
   const getInfoIcon = (iconName: string) => {
     switch (iconName) {
       case 'MapPin':
-        return <MapPin className="w-5 h-5 text-gray-700" />;
+        return <MapPin className="w-4 h-4 text-white" />;
       case 'Mail':
-        return <Mail className="w-5 h-5 text-gray-700" />;
+        return <Mail className="w-4 h-4 text-white" />;
       case 'Briefcase':
-        return <Briefcase className="w-5 h-5 text-gray-700" />;
+        return <Briefcase className="w-4 h-4 text-white" />;
       case 'Languages':
-        return <Languages className="w-5 h-5 text-gray-700" />;
+        return <Languages className="w-4 h-4 text-white" />;
       default:
-        return <Sparkles className="w-5 h-5 text-gray-700" />;
+        return <Sparkles className="w-4 h-4 text-white" />;
     }
   };
 
   return (
-    <section id="about" className="pt-8 pb-14 bg-[#f4f5f7]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-14 px-4 sm:px-6 lg:px-8 border-b border-[#232530] bg-[#090a0f]">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Section Heading */}
-        <div className="mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-            About Me
+        {/* Section Header with Monochrome Step Prefix */}
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-xs text-white font-bold tracking-widest uppercase mb-2">
+            <span className="px-1.5 py-0.5 rounded bg-white/10 border border-white/20">STEP 01</span>
+            <span className="text-neutral-600">•</span>
+            <span className="text-neutral-400">BACKGROUND</span>
+          </div>
+          <h2 className="font-['Syne'] text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            About Developer
           </h2>
-          <div className="w-12 h-1 bg-gray-900 rounded-full mt-3" />
+          <p className="font-['JetBrains_Mono'] text-xs sm:text-sm text-neutral-400 mt-1.5">
+            Full-stack mobile problem solver with a drive for high-impact applications
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Bio Narrative */}
-          <div className="lg:col-span-7 flex flex-col space-y-6 text-gray-600 text-base sm:text-lg leading-relaxed">
+          {/* Left Column: Bio Narrative in Grey & White Panel */}
+          <div className="lg:col-span-7 p-6 rounded-2xl bg-[#111217] border border-[#232530] space-y-5">
+            <div className="flex items-center gap-2 text-xs font-['JetBrains_Mono'] text-neutral-500 pb-3 border-b border-[#232530]">
+              <Terminal className="w-3.5 h-3.5 text-white" />
+              <span>bio_summary.md</span>
+            </div>
+
             {developer.aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-gray-700">
+              <p
+                key={index}
+                className="font-['JetBrains_Mono'] text-xs sm:text-sm text-neutral-300 leading-relaxed"
+              >
                 {paragraph}
               </p>
             ))}
 
-            <div className="pt-4">
+            <div className="pt-2">
               <button
                 onClick={() => setIsBioModalOpen(true)}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white hover:bg-gray-100 border border-gray-300 text-gray-900 font-medium text-sm sm:text-base transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#181920] hover:bg-[#20212b] text-white border border-[#232530] hover:border-white/40 font-['JetBrains_Mono'] text-xs font-semibold transition-all cursor-pointer shadow-[0_0_12px_rgba(255,255,255,0.05)]"
               >
-                <span>More About Me</span>
-                <ArrowRight className="w-4 h-4 text-gray-700" />
+                <span>Read Extended Bio</span>
+                <ArrowRight className="w-3.5 h-3.5 text-neutral-400" />
               </button>
             </div>
           </div>
 
-          {/* Right Column: 4 Information Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
+          {/* Right Column: 4 Information Cards in Grey & White */}
+          <div className="lg:col-span-5 flex flex-col gap-3">
             {aboutInfo.map((info) => {
               const isEmail = info.iconName === 'Mail';
               return (
                 <div
                   key={info.label}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-gray-200"
+                  className="flex items-center justify-between p-4 rounded-xl bg-[#111217] border border-[#232530] hover:border-white/30 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center flex-shrink-0">
-                    {getInfoIcon(info.iconName)}
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-9 h-9 rounded-lg bg-[#181920] border border-[#232530] flex items-center justify-center flex-shrink-0">
+                      {getInfoIcon(info.iconName)}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="font-['JetBrains_Mono'] text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+                        {info.label}
+                      </p>
+                      <p className="font-['JetBrains_Mono'] text-xs sm:text-sm font-semibold text-white truncate">
+                        {info.value}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-                      {info.label}
-                    </p>
-                    <p className="text-sm sm:text-base font-medium text-gray-900 truncate">
-                      {info.value}
-                    </p>
-                  </div>
+
                   {isEmail && (
                     <button
                       onClick={() => handleCopyEmail(info.value)}
                       title="Copy email to clipboard"
-                      className="px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300 transition-colors flex items-center gap-1.5 cursor-pointer"
+                      className="px-2.5 py-1 text-xs font-['JetBrains_Mono'] rounded bg-[#181920] hover:bg-[#232530] text-white border border-[#232530] transition-colors flex items-center gap-1 cursor-pointer flex-shrink-0 ml-2"
                     >
                       {copiedEmail ? (
                         <>
-                          <Check className="w-3.5 h-3.5 text-gray-900" />
-                          <span className="text-gray-900 font-semibold">Copied!</span>
+                          <Check className="w-3 h-3 text-white" />
+                          <span className="text-white font-semibold text-[11px]">Copied</span>
                         </>
                       ) : (
-                        <span>Copy</span>
+                        <span className="text-[11px] text-neutral-300">Copy</span>
                       )}
                     </button>
                   )}
@@ -103,69 +121,55 @@ export const About: React.FC = () => {
           </div>
 
         </div>
+
       </div>
 
-      {/* More About Me Modal */}
+      {/* Extended Bio Modal in Grey & White */}
       {isBioModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
-          <div className="relative w-full max-w-2xl bg-white border border-gray-300 rounded-3xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative w-full max-w-2xl bg-gradient-to-b from-[#181920] to-[#111217] border border-white/25 rounded-2xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto shadow-[0_24px_50px_#000000d9,0_0_24px_rgba(255,255,255,0.08)]">
             {/* Close Button */}
             <button
               onClick={() => setIsBioModalOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 rounded-lg bg-[#181920] hover:bg-[#232530] text-neutral-400 hover:text-white transition-colors cursor-pointer border border-[#232530]"
               aria-label="Close modal"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
 
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-800">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900">More About Monika</h3>
-                <p className="text-xs text-gray-500">Engineering Philosophy & Background</p>
-              </div>
+            <div className="flex items-center gap-2.5 font-['JetBrains_Mono'] text-xs text-white font-bold uppercase mb-2">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span>Full Profile Narrative</span>
             </div>
 
-            <div className="space-y-5 text-gray-700 text-sm sm:text-base leading-relaxed">
-              <div>
-                <h4 className="flex items-center gap-2 text-gray-900 font-semibold text-base mb-2">
-                  <GraduationCap className="w-4 h-4 text-gray-700" />
-                  Background & Foundation
-                </h4>
-                <p className="text-gray-600">
-                  Graduated with a strong technical foundation in computer science and mobile application development. Specialized in cross-platform mobile engineering with Dart & Flutter, complemented with native Android Kotlin concepts.
-                </p>
-              </div>
+            <h3 className="font-['Syne'] text-2xl font-bold text-white mb-6">
+              Engineering Mindset & Ambition
+            </h3>
 
-              <div>
-                <h4 className="flex items-center gap-2 text-gray-900 font-semibold text-base mb-2">
-                  <Award className="w-4 h-4 text-gray-700" />
-                  Development Principles
-                </h4>
-                <p className="text-gray-600">
-                  I believe great software balances clean, maintainable architecture with delightful, intuitive UI micro-interactions. From state management patterns like Riverpod/Bloc to offline-first cache strategies, I craft robust mobile solutions.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="flex items-center gap-2 text-gray-900 font-semibold text-base mb-2">
-                  <HeartHandshake className="w-4 h-4 text-gray-700" />
-                  Collaboration & Growth
-                </h4>
-                <p className="text-gray-600">
-                  Always excited to collaborate with cross-functional teams, contribute to open-source, and explore emerging AI capabilities (Gemini, LangChain) to create next-generation applications.
+            <div className="space-y-4 font-['JetBrains_Mono'] text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <p>
+                My journey began with a curiosity for mobile development and solving real problems through software. Starting with native Android (Kotlin), I quickly realized the immense velocity and design expressiveness offered by the Flutter framework.
+              </p>
+              <p>
+                In my professional and personal work, I have spearheaded apps like <strong className="text-white">BrainVault</strong>, combining Google Gemini LLM with offline-first Cloud Firestore, as well as institutional systems like <strong className="text-white">Insightse</strong> and enterprise modules under <strong className="text-white">Stella Polaris (ERPNext)</strong>.
+              </p>
+              <div className="p-4 rounded-xl bg-[#090a0f] border border-[#232530] space-y-2 mt-4">
+                <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <GraduationCap className="w-4 h-4" />
+                  <span>Continuous Development & Problem Solving</span>
+                </div>
+                <p className="text-neutral-400 text-xs">
+                  Constantly studying algorithmic structures, system architecture, state management patterns (Riverpod, BLoC), and exploring international remote software roles.
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-200 flex justify-end">
+            <div className="mt-6 pt-4 border-t border-[#232530] flex justify-end">
               <button
                 onClick={() => setIsBioModalOpen(false)}
-                className="px-6 py-2.5 rounded-full bg-gray-900 hover:bg-gray-800 text-white font-medium text-sm transition-colors cursor-pointer"
+                className="px-5 py-2 rounded-lg bg-white hover:bg-neutral-200 text-black font-['JetBrains_Mono'] text-xs font-bold transition-colors cursor-pointer"
               >
-                Close
+                Close Window
               </button>
             </div>
           </div>
